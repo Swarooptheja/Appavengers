@@ -1,8 +1,9 @@
 import React from 'react';
 import SimpleSlider from './caurosel';
+import SimpleSlider1 from './caurosel1';
 import "./Home.css";
 import Automaticsliding from "./Multiplesliding"
-import Trendingsliding from "./Multiplesliding"
+import Trendingsliding from "./Trending"
 export const Home = () => {
   return (
     <div id='homepagecontainer'>
@@ -22,6 +23,11 @@ export const Home = () => {
         <div id="trending">
             <Trendingsliding/>
         </div>
+        <div id='trendingbottom'>
+            <SimpleSlider1/>
+        </div>
+
+        <hr />
 
     </div>
   )

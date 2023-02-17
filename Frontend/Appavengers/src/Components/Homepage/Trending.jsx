@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import "./Multiplesliding.css"
+import "./Trending.css"
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -30,8 +30,8 @@ export default class CustomArrows extends Component {
         const settings = {
             dots: true,
             infinite: true,
-            slidesToShow: 5,
-            slidesToScroll: 3,
+            slidesToShow: 6,
+            slidesToScroll: 4,
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />
         };
@@ -39,27 +39,27 @@ export default class CustomArrows extends Component {
             <div id="maincontainer">
                 <Slider {...settings} >
                     <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/340/9781974732340.jpg" alt="" /><h3>Fiction Books</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/340/9781974732340.jpg" alt="" />
                     </div>
                     <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/965/9781974720965.jpg" alt="" /> <h3>Tarot Cards</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/965/9781974720965.jpg" alt="" />
                     </div>
                     <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/255/9781421536255.jpg" alt="" />  <h3>Best Seller</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/255/9781421536255.jpg" alt="" /> 
                     </div>
                     <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/785/9781974722785.jpg" alt="" /><h3>Award Winner</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/785/9781974722785.jpg" alt="" />
                     </div>
                     <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/984/9781974725984.jpg" alt="" /> <h3>Box sets</h3>
-                    </div>
-
-                    <div className="slides">
-                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/785/9780857367785.jpg" alt="" />  <h3>Internationl best sellers</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/mainimages/984/9781974725984.jpg" alt="" /> 
                     </div>
 
                     <div className="slides">
-                       <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/279/9781974717279.jpg" alt="" /> <h3>New Arrivals</h3>
+                        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/785/9780857367785.jpg" alt="" /> 
+                    </div>
+
+                    <div className="slides">
+                       <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/279/9781974717279.jpg" alt="" /> 
                     </div>
                     <div className="slides">
                         <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/279/9781974717279.jpg" alt="" />

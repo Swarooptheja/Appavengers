@@ -9,7 +9,7 @@ const SliderContainer = ({ children }) => {
   return <div style={{ position: "relative", zIndex: 1 }}>{children}</div>;
 };
 
-const SimpleSlider = () => {
+const SimpleSlider1 = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -34,7 +34,7 @@ const SimpleSlider = () => {
           alignItems: "center",
           marginTop:0,
           padding: 0,
-          width: "100%",
+          width: "50%",
           height: "50px",
           listStyleType: "none",
         }}
@@ -57,28 +57,20 @@ const SimpleSlider = () => {
       <Slider {...settings}>
 
       <div>
-        <img src="https://www.bookswagon.com/images/bannerimages/79_inr.jpg?v=1.4" alt="" />
+        <img width={"120%"} height={"600px"} src="https://www.bookswagon.com/images/promotionimages/web/BussinessWeb.jpg?v=1.6" alt="" />
         </div>
         <div>
-          <img src="https://www.bookswagon.com/images/bannerimages/82_inr.jpg?v=1.4" alt="" />
+          <img width={"120%"}  height={"600px"} src="https://www.bookswagon.com/images/promotionimages/web/tarotcardWeb.jpg?v=1.6" alt="" />
         </div>
         <div>
-         <img src="https://www.bookswagon.com/images/bannerimages/83_inr.jpg?v=1.4" alt="" />
+         <img width={"120%"}  height={"600px"} src="https://www.bookswagon.com/images/promotionimages/web/ExamWeb.jpg?v=1.6" alt="" />
         </div>
-        <div>
-         <img src="https://www.bookswagon.com/images/bannerimages/80_inr.jpg?v=1.4" alt="" />
-        </div>
-        <div>
-         <img src="https://www.bookswagon.com/images/bannerimages/84_inr.jpg?v=1.4" alt="" />
-        </div>
-        <div>
-         <img src="https://www.bookswagon.com/images/bannerimages/81_inr.jpg?v=1.4" alt="" />
-        </div>
+        
       </Slider>
     </SliderContainer>
   );
 };
 
-export default SimpleSlider;
+export default SimpleSlider1;
 
 

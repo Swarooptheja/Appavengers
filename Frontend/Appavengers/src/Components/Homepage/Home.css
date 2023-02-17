@@ -14,3 +14,9 @@
 hr{
     border: 2px solid gray;
 }
+#trending{
+    margin-top: 4rem;
+}
+#trendingbottom{
+    margin-bottom: 3rem;
+}
