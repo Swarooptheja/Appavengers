@@ -1,10 +1,11 @@
-import { bestget, internationalget, newarrival } from "./actiontype"
+import { allbooksget, bestget, internationalget, newarrival } from "./actiontype"
 
 
 let initdata={
     bestdata:[],
     newarrivaldata:[],
-    internationaldata:[]
+    internationaldata:[],
+    allbooksdata:[]
    
 
 }
@@ -29,6 +30,13 @@ let reducer=(state=initdata,action)=>{
         return{
             ...state,
             internationaldata:action.payload
+        }
+    }
+
+    if(action.type==allbooksget){
+        return{
+            ...state,
+            allbooksdata:action.payload
         }
     }
 

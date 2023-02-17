@@ -59,194 +59,688 @@ Userrouterallbooks.get('/',asyncHandler(async(req,res)=>{
 Userrouterallbooks.get("/allbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Allbooks.find() : await Allbooks.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Allbooks.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Allbooks.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
 
   Userrouterallbooks.get("/bestsellerbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Bestsellerbooks.find() : await Bestsellerbooks.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Bestsellerbooks.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Bestsellerbooks.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/biography",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Biography.find() : await Biography.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Biography.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Biography.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/computerbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Computer.find() : await Computer.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Computer.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Computer.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/distonarybooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Distonary.find() : await Distonary.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Distonary.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Distonary.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/frenchbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Frenchbooks.find() : await Frenchbooks.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Frenchbooks.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Frenchbooks.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/geographybooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Geography.find() : await Geography.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Geography.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Geography.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/germanybooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await German.find() : await German.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await German.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await German.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/hindibooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Hindi.find() : await Hindi.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Hindi.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Hindi.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/lawbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await law.find() : await law.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await law.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await law.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
 
   Userrouterallbooks.get("/lifestylebooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await lifestyle.find() : await lifestyle.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await lifestyle.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await lifestyle.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/mayayalambooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Malayalam.find() : await Malayalam.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Malayalam.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Malayalam.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/maratibooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Marati.find() : await Marati.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Marati.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Marati.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/mathematicsbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Mathematics.find() : await Mathematics.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Mathematics.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Mathematics.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/medicinebooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Medicine.find() : await Medicine.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Medicine.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Medicine.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/otherbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Other.find() : await Other.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Other.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Other.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
 
   Userrouterallbooks.get("/recentbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Recentpublish.find() : await Recentpublish.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Recentpublish.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Recentpublish.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/telugubooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Telugubooks.find() : await Telugubooks.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Telugubooks.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Telugubooks.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
   Userrouterallbooks.get("/tamilbooks",  asyncHandler(async (req, res) => {
     const {orderBy} = req.query
     try {
-      const product =  orderBy?.length == 0 ? await Tamilbooks.find() : await Tamilbooks.find().sort({'price': orderBy });
-      res.send(product);
+      if(orderBy){
+        let num=+orderBy
+        console.log(orderBy,"orderby")
+       let data= await Tamilbooks.aggregate([
+        {
+          $addFields: {
+            price: {
+              $convert: {
+                input: { $substr: ["$price", 3, -1] },
+                to: "double",
+                onError: 0
+              }
+            }
+          }
+        },
+        {
+          $match: { price: { $ne: 0 } }
+        },
+        {
+          $sort: { price:num }
+        }
+      ])
+        res.send(data)  
+      }
+      else{
+        const product=await Tamilbooks.find()
+        res.send(product)
+
+      }
     } catch (err) {
-      console.log(err);
-      res.send({ massage: "Something Went Wrong" });
+      throw new Error(err)
     }
   }))
 

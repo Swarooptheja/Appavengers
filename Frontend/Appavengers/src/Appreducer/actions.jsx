@@ -1,4 +1,4 @@
-import { bestfail, bestget, bestreq, internationalget, newarrival } from "./actiontype"
+import { allbooksget, bestfail, bestget, bestreq, internationalget, newarrival } from "./actiontype"
 
 import axios from "axios"
 
@@ -41,6 +41,12 @@ let International=(payload)=>{
         payload
     }
 }
+let Allbooks=(payload)=>{
+    return{
+        type:allbooksget,
+        payload
+    }
+}
 
 let GetBest=()=>(dispatch)=>{
     axios.get("https://long-gray-oyster-boot.cyclic.app/bestsellerbooks")
@@ -62,4 +68,21 @@ let Newarrivaldata=()=>(dispatch)=>{
     })
  }
 
-export {GetBest,Newarrivaldata,Internationaldata}
+ let Allbooksdata=(payload)=>(dispatch)=>{
+    if(payload){
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/allbooks?orderBy=${payload}`)
+        .then((res)=>{
+            dispatch(Allbooks(res.data))
+        })
+
+    }
+    else{
+        axios.get("https://long-gray-oyster-boot.cyclic.app/allbooks")
+        .then((res)=>{
+            dispatch(Allbooks(res.data))
+        })
+
+    }
+ }
+
+export {GetBest,Newarrivaldata,Internationaldata,Allbooksdata}
