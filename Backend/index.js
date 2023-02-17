@@ -1,11 +1,15 @@
 const bodyParser = require("body-parser");
 let express=require('express');
+let cors=require('cors')
 const { connectionurl } = require("./Conection/db");
 // const { connection } = require('mongoose')
 const { notFound, errorHandler } = require('./errorHandle')
 const { Userrouterallbooks } = require('./Routers/Userrouter')
 
 let app=express()
+app.use(cors({
+   origin:"*"
+}))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
