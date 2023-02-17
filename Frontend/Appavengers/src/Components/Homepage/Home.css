@@ -20,3 +20,34 @@ hr{
 #trendingbottom{
     margin-bottom: 3rem;
 }
+#homebestcontainer{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,4fr));
+    gap: 1rem;
+}
+#homebestcontainer>div{
+    padding: 10px;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+#homebestcontainer>div>img{
+    width: 60%;
+}
+.homebestcontainerinside{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.homebestcontainerinside>h5:nth-child(1){
+    text-decoration: line-through;
+    color: red;
+}
+#homebestcontainerh1{
+    width: 90%;
+    margin: auto;
+    font-style: italic;
+    text-align: left;
+}
