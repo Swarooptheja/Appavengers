@@ -66,10 +66,10 @@ export const Home = () => {
                     return (
                         <div key={el._id}>
                             <img src={el.image} alt="" />
-                            <h4>{el.title}</h4>
+                            <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
-                                <h5>₹ {el.initialprice}</h5>
-                                <h5>₹ {el.price}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.initialprice}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.price}</h5>
                             </div>
                         </div>
                     )
@@ -88,10 +88,10 @@ export const Home = () => {
                     return (
                         <div key={el._id}>
                             <img src={el.image} alt="" />
-                            <h4>{el.title}</h4>
+                            <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
-                                <h5>₹ {el.initialprice}</h5>
-                                <h5>₹ {el.price}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.initialprice}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.price}</h5>
                             </div>
                         </div>
                     )
@@ -115,15 +115,20 @@ export const Home = () => {
                     return (
                         <div key={el._id}>
                             <img src={el.image} alt="" />
-                            <h4>{el.title}</h4>
+                            <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
-                                <h5>₹ {el.initialprice}</h5>
-                                <h5>₹ {el.price}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.initialprice}</h5>
+                                <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.price}</h5>
                             </div>
                         </div>
                     )
                 })
             }
+        </div>
+
+
+        <div id='homeauthor'>
+            <Homebestcaurosel/>
         </div>
 
 

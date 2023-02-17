@@ -51,3 +51,8 @@ hr{
     font-style: italic;
     text-align: left;
 }
+#homeauthor{
+    margin-top: 3rem;
+    background-color: gray;
+    margin-bottom: 4rem;
+}
