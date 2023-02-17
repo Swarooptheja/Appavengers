@@ -1,0 +1,16 @@
+#youmayalsolike{
+    text-align: left;
+}
+
+Slider{
+    width: 90%;
+    border: 3px solid red;
+}
+
+.slides>img{
+    width: 50%;
+}
+#maincontainer{
+    width: 80%;
+    margin: auto;
+}
