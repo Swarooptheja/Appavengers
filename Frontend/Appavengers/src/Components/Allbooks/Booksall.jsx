@@ -7,7 +7,7 @@ export const Booksall = () => {
     
     let [value,setvalue] =useState('')
     useEffect(()=>{
-        dispatch(Allbooksdata(value))
+        dispatch(Allbooksdata(+value))
     },[value])
 
     let allbooksdata=useSelector((state)=>{
@@ -15,11 +15,23 @@ export const Booksall = () => {
     })
   return (
     <>
+    <div id='selectbtn'>
+        <div>
+            <h3 style={{fontStyle:"italic"}}>
+
+            Sort By:
+            </h3>
+        </div>
+        <div>
+
     <select name="" onChange={(e)=>setvalue(e.target.value)} id="">
         <option value="">Relevance</option>
-        <option value="-1">Low to High</option>
-        <option value="1">Hign to Low</option>
+        <option value="1">Low to High</option>
+        <option value="-1">Hign to Low</option>
     </select>
+        </div>
+
+    </div>
     <div id='booksallmaincontainer'>
         <div>
            
