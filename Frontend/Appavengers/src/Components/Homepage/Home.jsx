@@ -6,7 +6,7 @@ import Automaticsliding from "./Multiplesliding"
 import Trendingsliding from "./Trending";
 import Homebestcaurosel from "./Homebestseller"
 import { useSelector,useDispatch } from 'react-redux'
-import { GetBest, Newarrivaldata } from '../../Appreducer/actions';
+import { GetBest, Internationaldata, Newarrivaldata } from '../../Appreducer/actions';
 export const Home = () => {
     let dispatch=useDispatch()
     let bestdata=useSelector((state)=>{
@@ -23,6 +23,14 @@ export const Home = () => {
     useEffect(()=>{
         dispatch(Newarrivaldata())
     },[dispatch,newarrival])
+
+    let international=useSelector((state)=>{
+        return state.Appreducer.internationaldata
+    })
+    useEffect(()=>{
+        dispatch(Internationaldata())
+    },[dispatch,newarrival])
+
     
   return (
     <div id='homepagecontainer'>
@@ -96,6 +104,30 @@ export const Home = () => {
         <div id='middleimage'>
             <img width={"100%"} src="https://www.bookswagon.com/images/promotionimages/web/MedicalWeb.jpg?v=1.5" alt="" />
         </div>
+        <div id='homebestcontainerh1'>
+        <h1>International books</h1>
+
+       </div>
+
+       <div id='homebestcontainer'>
+            {
+                international.length>0 && international.map((el)=>{
+                    return (
+                        <div key={el._id}>
+                            <img src={el.image} alt="" />
+                            <h4>{el.title}</h4>
+                            <div className='homebestcontainerinside'>
+                                <h5>₹ {el.initialprice}</h5>
+                                <h5>₹ {el.price}</h5>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
+
+
+
 
     </div>
   )
