@@ -7,6 +7,8 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
+import {FaHeart} from "react-icons/fa"
+import {BsFillCartFill} from "react-icons/bs"
 // import circuitlogo from "./logo.png";
 import { useSelector } from "react-redux";
 
@@ -32,12 +34,18 @@ const Navbar = () => {
   let handleimg=()=>{
     Navi("/")
   }
-
+let handleheart=()=>{
+  Navi("/wishlistpage")
+}
   return (
     <>
       <div className="Navbar_container">
+        <div>
+
         <nav>
+          <div>
           <img onClick={handleimg} src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/logo-new.png" alt="circuitlogo" />
+          </div>
           <div id="navlink">
             <div>
               <a href="/lifestylebooks">
@@ -128,6 +136,16 @@ const Navbar = () => {
             }}
           />
         </nav>
+        </div>
+        <div id="secondnav">
+         <div>
+          
+         </div>
+         <div>
+          {/* <BsFillCartFill size={40} color="black" cursor={"pointer"} /> */}
+          <FaHeart onClick={handleheart} size={40} color="red"  cursor={"pointer"}/>
+         </div>
+        </div>
       </div>
     </>
   );

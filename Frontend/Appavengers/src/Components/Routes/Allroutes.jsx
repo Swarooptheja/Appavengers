@@ -9,6 +9,7 @@ import { LIfestyle } from '../Allcomponents/LIfestyle'
 import { Mathematics } from '../Allcomponents/Mathematics'
 import { Medicine } from '../Allcomponents/Medicine'
 import { Singlepage } from '../Allcomponents/Singlepage'
+import { Wishlistpage } from '../Allcomponents/Wishlistpage'
 
 import { Home } from '../Homepage/Home'
 import Login from '../Login/Login'
@@ -28,6 +29,7 @@ export const Allroutes = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route exact path="/:component/singleproduct/:id" element={<Singlepage/>}/>
+      <Route path='/wishlistpage' element={<Wishlistpage/>}/>
       {/* <Redirect from="/allbooks" to="/singleproduct/:id"/> */}
    </Routes>
   )

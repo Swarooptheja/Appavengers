@@ -1,4 +1,60 @@
 
 #singlepagecontainer{
+    margin: auto;
     margin-top: 10rem;
+    width: 80%;
+    
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
+
+
+}
+#singlepagecontainer>div:nth-child(2){
+    padding: 15px;
+}
+#singlepagecontainer>div:nth-child(1){
+    border-radius: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+}
+#singlepagecontainer>div:nth-child(1)>img{
+    border-radius: 0.6rem;
+    width: 70%;
+    
+}
+#alldivstarts{
+    width: 20%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+#allbuttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.firstbtn{
+    width: 100%;
+    padding: 10px 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.secondbtn{
+    width: 100%;
+    padding: 10px 30px;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    /* border: none; */
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }

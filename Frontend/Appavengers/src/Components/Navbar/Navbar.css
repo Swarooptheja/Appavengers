@@ -4,7 +4,7 @@
     width: 100%;
     display: grid;
     grid-template-rows: repeat(2,1fr);
-    height: 4rem;
+    height: 5rem;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -16,6 +16,16 @@
     /* margin-top: 5rem; */
 
   }
+  #secondnav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* .Navbar_container>div{
+    border: 1px solid red;
+  } */
 
 
   
@@ -23,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     width: 90%;
     right: 20px;
     height: 4rem;
@@ -48,8 +58,8 @@
     cursor: pointer;
   }
   
-  nav > img {
-    width: 8%;
+  nav >div:nth-child(1)> img {
+    width: 100%;
     border-radius: 5px;
     border: none;
     cursor: pointer;
