@@ -85,6 +85,48 @@ export const Booksall = () => {
                 <label htmlFor="">German</label>
                 </div>
             </div>
+
+            <div className='language'>
+                <h3>Subject</h3>
+            </div>
+            <div>
+                <div className='language'>
+                <input type="radio" value="lifestylebooks" onChange={(e)=>setstate(e.target.value)}  name="main" />
+                <label htmlFor=""  >Life Style Books</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="lawbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Law Books</label>
+                </div>
+                <div className='language'  >
+                <input type="radio" name="main" value="mathematicsbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Mathematics Books</label>
+                </div>
+                <div className='language'>
+                <input type="radio"  name="main"value="computerbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Computer Science Books</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="medicinebooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Medicine Books</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="bestsellerbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Best Seller Books</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="biography" onChange={(e)=>setstate(e.target.value)}/>
+                <label htmlFor="">Biography</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="geographybooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Geography</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="recentbooks"  onChange={(e)=>setstate(e.target.value)}  />
+                <label htmlFor="">Award Books</label>
+                </div>
+            </div>
            
         </div>
        
