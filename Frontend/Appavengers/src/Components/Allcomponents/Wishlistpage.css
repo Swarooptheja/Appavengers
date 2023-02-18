@@ -1,0 +1,25 @@
+#wishlistpagecontainer{
+    margin-top: 8rem;
+   
+}
+#wistlistinside{
+/* border: 1px solid red; */
+width: 50%;
+margin: auto;
+margin-top: 10rem;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 1rem;
+background-color: rgb(251, 244, 244);
+padding: 20px;
+border-radius: 1rem;
+/* margin-top: 3rem; */
+/* border: 1px solid green; */
+}
+#wistlistinside>div:nth-child(1)>img{
+   width: 60%;
+}
+#wistlistinside>div:nth-child(2){
+    /* border: 1px solid red; */
+    padding: 10px;
+}

@@ -9,6 +9,7 @@ import { LIfestyle } from '../Allcomponents/LIfestyle'
 import { Mathematics } from '../Allcomponents/Mathematics'
 import { Medicine } from '../Allcomponents/Medicine'
 import { Singlepage } from '../Allcomponents/Singlepage'
+// import Wishlistpage from '../Allcomponents/Wishlistpage'
 import { Wishlistpage } from '../Allcomponents/Wishlistpage'
 
 import { Home } from '../Homepage/Home'
