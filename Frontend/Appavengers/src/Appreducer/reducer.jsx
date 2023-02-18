@@ -1,16 +1,61 @@
-import { allbooksget, bestget, internationalget, newarrival } from "./actiontype"
+import { allbooksget, bestget, computerget, geographyget, internationalget, lawget, lifestylebooksget, mathematicsget, medicineget, newarrival } from "./actiontype"
 
 
 let initdata={
     bestdata:[],
     newarrivaldata:[],
     internationaldata:[],
-    allbooksdata:[]
+    allbooksdata:[],
+    lifestylebooksdata:[],
+    lawbooksdata:[],
+    mathematicsdata:[],
+    medicinedata:[],
+    computerdata:[],
+    geographydata:[]
    
 
 }
 
 let reducer=(state=initdata,action)=>{
+    if(action.type==geographyget){
+        return{
+            ...state,
+            geographydata:action.payload
+
+        }
+    }
+    if(action.type==computerget){
+        return{
+            ...state,
+            computerdata:action.payload
+        }
+    }
+    if(action.type==medicineget){
+        return{
+            ...state,
+            medicinedata:action.payload
+
+        }
+    }
+    if(action.type==mathematicsget){
+        return{
+            ...state,
+            mathematicsdata:action.payload
+            
+        }
+    }
+    if(action.type==lawget){
+        return{
+            ...state,
+            lawbooksdata:action.payload
+        }
+    }
+    if(action.type==lifestylebooksget){
+        return{
+            ...state,
+            lifestylebooksdata:action.payload
+        }
+    }
     if(action.type==bestget){
         
         return{
