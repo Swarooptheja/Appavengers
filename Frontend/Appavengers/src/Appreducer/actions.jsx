@@ -1,4 +1,4 @@
-import { allbooksget, bestfail, bestget, bestreq, computerget, geographyget, internationalget, lawget, lifestylebooksget, mathematicsget, medicineget, newarrival } from "./actiontype"
+import { allbooksget, bestfail, bestget, bestreq, computerget, geographyget, internationalget, lawget, lifestylebooksget, mathematicsget, medicineget, newarrival, singleget } from "./actiontype"
 
 import axios from "axios"
 
@@ -66,6 +66,29 @@ let Geography=(payload)=>{
     return{
         type:geographyget,
         payload
+    }
+}
+
+let Single=(payload)=>{
+    return{
+        type:singleget,
+        payload
+    }
+}
+
+let Singledata=(payload,id)=>(dispatch)=>{
+    // console.log(payload,id,"insie singeldata")
+    if(payload&&id){
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/${payload}/singleproduct/${id}`)
+        .then((res)=>{
+            dispatch(Single(res.data))
+        })
+    }
+    else{
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/allbooks/singleproduct/${id}`)
+        .then((res)=>{
+            dispatch(Single(res.data))
+        })
     }
 }
 
@@ -223,4 +246,4 @@ let Allbooksdata = (payload, main) => (dispatch) => {
     }
 }
 
-export { Geographydata,Computerdata,GetBest,Medicinedata, Newarrivaldata, Internationaldata, Allbooksdata, Lifestyledata,Lawdata,Mathematicsdata }
+export { Singledata,Geographydata,Computerdata,GetBest,Medicinedata, Newarrivaldata, Internationaldata, Allbooksdata, Lifestyledata,Lawdata,Mathematicsdata }

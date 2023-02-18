@@ -1,4 +1,4 @@
-import { allbooksget, bestget, computerget, geographyget, internationalget, lawget, lifestylebooksget, mathematicsget, medicineget, newarrival } from "./actiontype"
+import { allbooksget, bestget, computerget, geographyget, internationalget, lawget, lifestylebooksget, mathematicsget, medicineget, newarrival, singleget } from "./actiontype"
 
 
 let initdata={
@@ -11,12 +11,19 @@ let initdata={
     mathematicsdata:[],
     medicinedata:[],
     computerdata:[],
-    geographydata:[]
+    geographydata:[],
+    singledata:[]
    
 
 }
 
 let reducer=(state=initdata,action)=>{
+    if(action.type==singleget){
+        return{
+            ...state,
+            singledata:action.payload
+        }
+    }
     if(action.type==geographyget){
         return{
             ...state,

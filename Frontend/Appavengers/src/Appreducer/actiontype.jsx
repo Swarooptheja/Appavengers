@@ -21,3 +21,5 @@ export let medicineget="medicineget";
 export let computerget="computerget";
 
 export let geographyget="geographyget";
+
+export let singleget="singleget"
