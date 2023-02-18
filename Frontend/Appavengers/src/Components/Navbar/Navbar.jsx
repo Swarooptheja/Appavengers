@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { ImMenu } from "react-icons/im";
 import { ImCross } from "react-icons/im";
@@ -11,11 +11,17 @@ import { AiOutlineDown } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const local = JSON.parse(localStorage.getItem("ADDAUTH")) || [];
-  const { isAuth } = useSelector((ele) => ele.Authreducer);
+  const local = JSON.parse(localStorage.getItem("passwordtoken")) || "";
 
+//   console.log(local.firstname,"local")
+//   const { isAuth } = useSelector((ele) => ele.Authreducer);
+   
   const [classes, setclasses] = useState("donotshownavbar");
   const Navi = useNavigate();
+
+//   useEffect(()=>{
+//     console.log(isAuth,"inside")
+//   },[isAuth])
 
   let handlesignup=()=>{
     Navi("/signup")
@@ -47,7 +53,7 @@ const Navbar = () => {
               </a>
             </div>
             <div>
-              <a href="/Mathematicsbooks"><p>Mathematics</p></a>
+              <a href="/Mathematicsbooks"><p>Science</p></a>
             </div>
             <div>
               <a href="/Medicinebooks">
@@ -64,9 +70,9 @@ const Navbar = () => {
           <ul className={classes}>
             {/* ************************************************ */}
 
-            {isAuth ? (
+            {local ? (
               <>
-                <h1>Welcome {local.fullname}</h1>
+                <h1>Welcome {local.firstname + local.lastname}</h1>
               </>
             ) : (
               <li>

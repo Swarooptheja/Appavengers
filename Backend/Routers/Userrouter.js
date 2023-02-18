@@ -748,12 +748,13 @@ Userrouterallbooks.get("/allbooks",  asyncHandler(async (req, res) => {
 
 
 Userrouterallbooks.post("/register",asyncHandler(async(req,res)=>{
-    const email = req.body.email;
-  const findUser = await User.findOne({email});
-  if (!findUser) {
-    const newUser = await User.create(req.body);
-    res.json(newUser);
-  }
+  const email = req.body.email;
+  const mobile=req.body.mobile
+const findUser = await User.findOne({email,mobile});
+if (!findUser) {
+  const newUser = await User.create(req.body);
+  res.json(newUser);
+}
    else {
     throw new Error("User Already Exists")
   }

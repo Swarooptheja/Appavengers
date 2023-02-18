@@ -100,7 +100,7 @@ export const Booksall = () => {
                 </div>
                 <div className='language'  >
                 <input type="radio" name="main" value="mathematicsbooks" onChange={(e)=>setstate(e.target.value)} />
-                <label htmlFor="">Mathematics Books</label>
+                <label htmlFor="">Science Books</label>
                 </div>
                 <div className='language'>
                 <input type="radio"  name="main"value="computerbooks" onChange={(e)=>setstate(e.target.value)} />

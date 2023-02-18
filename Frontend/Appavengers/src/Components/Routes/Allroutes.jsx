@@ -10,6 +10,8 @@ import { Mathematics } from '../Allcomponents/Mathematics'
 import { Medicine } from '../Allcomponents/Medicine'
 
 import { Home } from '../Homepage/Home'
+import Login from '../Login/Login'
+import Signup from '../Signup/Signup'
 export const Allroutes = () => {
   return (
    <Routes>
@@ -22,6 +24,8 @@ export const Allroutes = () => {
       <Route path='/Medicinebooks' element={<Medicine/>}/>
       <Route path='/computerbooks' element={<Computer/>}/>
       <Route path='/geographybooks' element={<Geography/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/signup' element={<Signup/>}/>
    </Routes>
   )
 }

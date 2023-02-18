@@ -7,7 +7,7 @@
     height: 4rem;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     margin-bottom: 5rem;
     padding-top: 1rem;
     padding-bottom: 2rem;

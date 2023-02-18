@@ -1,0 +1,16 @@
+.MainSignupPage {
+    margin-top: 6rem;
+    height: 100%;
+  }
+  
+  .signuprightside {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .Profileimg{
+    width: 100%;
+
+  }
+  .Profileimg>img{
+    width: 100%;
+  }
