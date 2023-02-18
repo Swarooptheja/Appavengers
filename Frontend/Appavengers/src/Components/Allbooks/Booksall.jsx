@@ -6,13 +6,16 @@ export const Booksall = () => {
     let dispatch=useDispatch()
     
     let [value,setvalue] =useState('')
+    let [state,setstate]=useState(null)
     useEffect(()=>{
-        dispatch(Allbooksdata(+value))
-    },[value])
+        // console.log(state)
+        dispatch(Allbooksdata(+value,state))
+    },[value,state])
 
     let allbooksdata=useSelector((state)=>{
         return state.Appreducer.allbooksdata
     })
+
   return (
     <>
     <div id='selectbtn'>
@@ -33,7 +36,48 @@ export const Booksall = () => {
 
     </div>
     <div id='booksallmaincontainer'>
-        <div>
+        <div id='booksallsidebar'>
+            <div className='language'>
+                <h3>Language</h3>
+            </div>
+            <div>
+                <div className='language'>
+                <input type="radio" value="biography" onChange={(e)=>setstate(e.target.value)}  name="main" />
+                <label htmlFor=""  >English</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="otherbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Others</label>
+                </div>
+                <div className='language'  >
+                <input type="radio" name="main" value="hindibooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Hindi</label>
+                </div>
+                <div className='language'>
+                <input type="radio"  name="main"value="maratibooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Marathi</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="hindibooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Tamil</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="telugubooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">Telugu</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="mayayalambooks" onChange={(e)=>setstate(e.target.value)}/>
+                <label htmlFor="">Malayalam</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="frenchbooks" onChange={(e)=>setstate(e.target.value)} />
+                <label htmlFor="">French</label>
+                </div>
+                <div className='language'>
+                <input type="radio" name="main" value="germanybooks"  onChange={(e)=>setstate(e.target.value)}  />
+                <label htmlFor="">German</label>
+                </div>
+            </div>
            
         </div>
         <div id='homebestcontainer'>

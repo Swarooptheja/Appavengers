@@ -2,6 +2,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 20% 80%;
+
 }
 #booksallmaincontainer>div:nth-child(1){
     border: 1px solid red;
@@ -9,14 +10,22 @@
 #selectbtn{
     width: 30%;
     margin-left: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content:space-evenly;
+    margin-top: 3rem;
 }
 select{
     width: 100%;
     padding: 10px 40px;
     border-radius: 0.5rem;
     font-size: 20px;
+}
+
+.language{
+    text-align: left;
+}
+label{
+    margin-left: 0.5rem;
 }

@@ -68,13 +68,20 @@ let Newarrivaldata=()=>(dispatch)=>{
     })
  }
 
- let Allbooksdata=(payload)=>(dispatch)=>{
-    if(payload){
-        axios.get(`https://long-gray-oyster-boot.cyclic.app/allbooks?orderBy=${payload}`)
+ let Allbooksdata=(payload,main)=>(dispatch)=>{
+    console.log(payload,main)
+    if(payload && main){
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/${main}?orderBy=${payload}`)
         .then((res)=>{
             dispatch(Allbooks(res.data))
         })
 
+    }
+    else if(main){
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/${main}`)
+        .then((res)=>{
+            dispatch(Allbooks(res.data))
+        })
     }
     else{
         axios.get("https://long-gray-oyster-boot.cyclic.app/allbooks")
