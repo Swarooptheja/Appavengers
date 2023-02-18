@@ -7,8 +7,10 @@ import Trendingsliding from "./Trending";
 import Homebestcaurosel from "./Homebestseller"
 import { useSelector,useDispatch } from 'react-redux'
 import { GetBest, Internationaldata, Newarrivaldata } from '../../Appreducer/actions';
+import { useNavigate } from 'react-router-dom';
 export const Home = () => {
     let dispatch=useDispatch()
+    let navigate=useNavigate()
     let bestdata=useSelector((state)=>{
         return state.Appreducer.bestdata
     })
@@ -31,6 +33,13 @@ export const Home = () => {
         dispatch(Internationaldata())
     },[dispatch,newarrival])
 
+    let handleclick=()=>{
+        navigate("/allbooks")
+    }
+    
+    let handlesinglepage=(id)=>{
+        navigate(`singleproduct/${id}`)
+    }
     
   return (
     <div id='homepagecontainer'>
@@ -38,19 +47,19 @@ export const Home = () => {
             
             <img src="https://www.bookswagon.com/images/promotionimages/web/1_alltimefavourite.jpg?v=1.6" alt="" />
         </div>
-        <div id='sliderfirstautomatic'>
+        <div id='sliderfirstautomatic' onClick={handleclick}>
             <SimpleSlider/>
         </div>
         <hr />
-        <div id='slidersecondmultiple'>
+        <div id='slidersecondmultiple' onClick={handleclick}>
             <Automaticsliding/>
         </div>
         <hr />
 
-        <div id="trending">
+        <div id="trending" onClick={handleclick}>
             <Trendingsliding/>
         </div>
-        <div id='trendingbottom'>
+        <div id='trendingbottom' onClick={handleclick}>
             <SimpleSlider1/>
         </div>
 
@@ -64,7 +73,7 @@ export const Home = () => {
             {
                 bestdata.length>0 && bestdata.map((el)=>{
                     return (
-                        <div key={el._id}>
+                        <div key={el._id} onClick={()=>handlesinglepage(el._id)}  >
                             <img src={el.image} alt="" />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
@@ -86,7 +95,7 @@ export const Home = () => {
             {
                 newarrival.length>0 && newarrival.map((el)=>{
                     return (
-                        <div key={el._id}>
+                        <div key={el._id} onClick={()=>handlesinglepage(el._id)} >
                             <img src={el.image} alt="" />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
@@ -113,7 +122,7 @@ export const Home = () => {
             {
                 international.length>0 && international.map((el)=>{
                     return (
-                        <div key={el._id}>
+                        <div key={el._id}  onClick={()=>handlesinglepage(el._id)} >
                             <img src={el.image} alt="" />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
@@ -127,7 +136,7 @@ export const Home = () => {
         </div>
 
 
-        <div id='homeauthor'>
+        <div id='homeauthor' onClick={handleclick}>
             <Homebestcaurosel/>
         </div>
 

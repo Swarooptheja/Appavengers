@@ -4,6 +4,9 @@
     height: 3rem;
     /* border: 1px solid red; */
 }
+#homepagecontainer{
+    margin-top: 8rem;
+}
 #homepageheader>img{
     width: 100%;
 }

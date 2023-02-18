@@ -8,6 +8,7 @@ import { Law } from '../Allcomponents/Law'
 import { LIfestyle } from '../Allcomponents/LIfestyle'
 import { Mathematics } from '../Allcomponents/Mathematics'
 import { Medicine } from '../Allcomponents/Medicine'
+import { Singlepage } from '../Allcomponents/Singlepage'
 
 import { Home } from '../Homepage/Home'
 import Login from '../Login/Login'
@@ -26,6 +27,7 @@ export const Allroutes = () => {
       <Route path='/geographybooks' element={<Geography/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
+      <Route path="/singleproduct/:id" element={<Singlepage/>}/>
    </Routes>
   )
 }

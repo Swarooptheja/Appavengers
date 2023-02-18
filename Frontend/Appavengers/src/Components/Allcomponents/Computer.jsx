@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Computerdata, Medicinedata } from '../../Appreducer/actions'
 // import { Lawdata, Mathematicsdata } from '../../Appreducer/actions'
 // import { Lifestyledata } from '../../Appreducer/actions'
@@ -14,6 +15,10 @@ export const Computer = () => {
    useEffect(()=>{
     dispatch(Computerdata(+value))
    },[value])
+   let navigate=useNavigate()
+    let handlesinglepage=(id)=>{
+        navigate(`singleproduct/${id}`)
+    }
   return (
     <div>
          <div id='selectbtn'>
@@ -37,7 +42,7 @@ export const Computer = () => {
             {
                 computerdata.length>0 && computerdata.map((el)=>{
                     return (
-                        <div key={el._id}>
+                        <div key={el._id} onClick={()=>handlesinglepage(el._id)}>
                             <img src={el.image} alt="" />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>

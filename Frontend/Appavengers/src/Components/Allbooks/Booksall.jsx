@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Allbooksdata } from '../../Appreducer/actions'
 import "./Booksall.css"
 export const Booksall = () => {
     let dispatch=useDispatch()
-    
+    let navigate=useNavigate()
     let [value,setvalue] =useState('')
     let [state,setstate]=useState(null)
     useEffect(()=>{
@@ -16,6 +17,9 @@ export const Booksall = () => {
         return state.Appreducer.allbooksdata
     })
 
+    let handlesinglepage=(id)=>{
+        navigate(`singleproduct/${id}`)
+    }
   return (
     <>
     {/* <div id='allbooktop'>
@@ -134,8 +138,8 @@ export const Booksall = () => {
             {
                 allbooksdata.length>0 && allbooksdata.map((el)=>{
                     return (
-                        <div key={el._id}>
-                            <img src={el.image} alt="" />
+                        <div key={el._id} onClick={()=>handlesinglepage(el._id)} >
+                            <img src={el.image} alt=""  />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
                                 <h5 style={{fontWeight:"bold",fontSize:"20px"}}>₹ {el.initialprice}</h5>

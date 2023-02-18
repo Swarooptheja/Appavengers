@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Lifestyledata } from '../../Appreducer/actions'
 
 export const LIfestyle = () => {
@@ -11,6 +12,10 @@ export const LIfestyle = () => {
    useEffect(()=>{
     dispatch(Lifestyledata(+value))
    },[value])
+   let navigate=useNavigate()
+    let handlesinglepage=(id)=>{
+        navigate(`singleproduct/${id}`)
+    }
   return (
     <div>
          <div id='selectbtn'>
@@ -34,7 +39,7 @@ export const LIfestyle = () => {
             {
                 lifestyledata.length>0 && lifestyledata.map((el)=>{
                     return (
-                        <div key={el._id}>
+                        <div key={el._id} onClick={()=>handlesinglepage(el._id)}>
                             <img src={el.image} alt="" />
                             <h4 style={{color:'gray'}}>{el.title}</h4>
                             <div className='homebestcontainerinside'>
