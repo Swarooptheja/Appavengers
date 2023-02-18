@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes,Route} from "react-router-dom"
+import {Routes,Route,} from "react-router-dom"
 import { Booksall } from '../Allbooks/Booksall'
 import { Bestseller } from '../Allcomponents/Bestseller'
 import { Computer } from '../Allcomponents/Computer'
@@ -27,7 +27,8 @@ export const Allroutes = () => {
       <Route path='/geographybooks' element={<Geography/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path="/singleproduct/:id" element={<Singlepage/>}/>
+      <Route exact path="/:component/singleproduct/:id" element={<Singlepage/>}/>
+      {/* <Redirect from="/allbooks" to="/singleproduct/:id"/> */}
    </Routes>
   )
 }
