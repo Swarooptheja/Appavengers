@@ -83,6 +83,12 @@ let Newarrivaldata=()=>(dispatch)=>{
             dispatch(Allbooks(res.data))
         })
     }
+    else if(payload){
+        axios.get(`https://long-gray-oyster-boot.cyclic.app/allbooks?orderBy=${payload}`)
+        .then((res)=>{
+            dispatch(Allbooks(res.data))
+        })
+    }
     else{
         axios.get("https://long-gray-oyster-boot.cyclic.app/allbooks")
         .then((res)=>{

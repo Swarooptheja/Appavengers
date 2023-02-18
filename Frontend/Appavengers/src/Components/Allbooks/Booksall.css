@@ -4,8 +4,12 @@
     grid-template-columns: 20% 80%;
 
 }
+
 #booksallmaincontainer>div:nth-child(1){
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 10px;
+    border-radius: 1rem;
 }
 #selectbtn{
     width: 30%;
@@ -28,4 +32,12 @@ select{
 }
 label{
     margin-left: 0.5rem;
+}
+#allbooktop{
+    width: 70%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
 }

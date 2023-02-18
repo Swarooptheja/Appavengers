@@ -18,7 +18,12 @@ export const Booksall = () => {
 
   return (
     <>
-    <div id='selectbtn'>
+    {/* <div id='allbooktop'>
+        <div>
+            <h3 style={{fontStyle:"italic",color:"red"}}>{allbooksdata.length} Results found</h3>
+        </div>
+    </div> */}
+        <div id='selectbtn'>
         <div>
             <h3 style={{fontStyle:"italic"}}>
 
@@ -35,6 +40,8 @@ export const Booksall = () => {
         </div>
 
     </div>
+
+  
     <div id='booksallmaincontainer'>
         <div id='booksallsidebar'>
             <div className='language'>
@@ -80,6 +87,7 @@ export const Booksall = () => {
             </div>
            
         </div>
+       
         <div id='homebestcontainer'>
             {
                 allbooksdata.length>0 && allbooksdata.map((el)=>{
