@@ -13,6 +13,7 @@ import {
     TableContainer,
     textDecoration,
   } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom';
 export const Addtocart = () => {
     let [update,setupdate]=useState(0)
     let addtocart = JSON.parse(localStorage.getItem("addedtocart")) || []
@@ -22,6 +23,7 @@ export const Addtocart = () => {
         setupdate(()=>update+1)
         alert("Delete the product from Addtocart succssfully")
     }
+    let Navi=useNavigate()
     let price=0;
     let initialprice=0
     addtocart.forEach((el)=>{
@@ -32,7 +34,9 @@ export const Addtocart = () => {
         let num1=parseFloat(str1.replace(/[^\d,]|(Rs\.)/g, '').replace(',',''))
         initialprice+=num1
     })
-    console.log(price,initialprice)
+    let handleplaceorder=()=>{
+        Navi("/placeorder")
+    }
     return (
         <div id='addtocartcontainer'>
             <div id='addtocartheader'>
@@ -103,7 +107,7 @@ export const Addtocart = () => {
                     <b style={{color:"green"}}>Amount payable ₹ {price+39}</b>
                 </div>
                 <div>
-                    <button id='placeorder'>Place Order</button>
+                    <button id='placeorder' onClick={handleplaceorder}>Place Order</button>
                 </div>
             </div>
         </div>

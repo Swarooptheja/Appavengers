@@ -38,7 +38,7 @@ export const Home = () => {
     }
     
     let handlesinglepage=(id)=>{
-        navigate(`/:main/singleproduct/${id}`)
+        navigate(`/allbooks`)
     }
     
   return (

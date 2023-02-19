@@ -9,8 +9,13 @@ import { Law } from '../Allcomponents/Law'
 import { LIfestyle } from '../Allcomponents/LIfestyle'
 import { Mathematics } from '../Allcomponents/Mathematics'
 import { Medicine } from '../Allcomponents/Medicine'
-import { Placeorder } from '../Allcomponents/Placeorder'
+import { Otp } from '../Allcomponents/Otp'
+import { Payment } from '../Allcomponents/Payment'
+import { Paymentsuccess } from '../Allcomponents/Paymentsuccess'
+import  Placeorder from '../Allcomponents/Placeorder'
+import { Reqauth } from '../Allcomponents/Reqauth'
 import { Singlepage } from '../Allcomponents/Singlepage'
+import { Success } from '../Allcomponents/Success'
 // import Wishlistpage from '../Allcomponents/Wishlistpage'
 import { Wishlistpage } from '../Allcomponents/Wishlistpage'
 
@@ -32,9 +37,13 @@ export const Allroutes = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route exact path="/:component/singleproduct/:id" element={<Singlepage/>}/>
-      <Route path='/wishlistpage' element={<Wishlistpage/>}/>
-      <Route path='/addtocard' element={<Addtocart/>}/>
-      <Route path='/placeorder' element={<Placeorder/>}/>
+      <Route path='/wishlistpage' element={<Reqauth> <Wishlistpage/></Reqauth>}/>
+      <Route path='/addtocard' element={<Reqauth><Addtocart/></Reqauth>}/>
+      <Route path='/placeorder' element={<Reqauth><Placeorder/></Reqauth>}/>
+      <Route path='/payment'element={<Reqauth><Payment/></Reqauth>}/>
+      <Route path='/paymentsuccess' element={ <Reqauth> <Paymentsuccess/></Reqauth> }/>
+      <Route path='/otp' element={<Reqauth> <Otp/></Reqauth>}/>
+      <Route path='/success' element={<Reqauth><Success/></Reqauth>} />
    </Routes>
   )
 }

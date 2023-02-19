@@ -1,0 +1,132 @@
+#paymentmainpage{
+    width: 50%;
+    background-color: white;
+    height: auto;
+    margin: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+a{
+    text-decoration: none;
+}
+
+#dlfj{
+width:40%;
+margin: auto;
+}
+
+#paymentmainpage>div:nth-child(1){
+    text-align: left;
+}
+
+#paymentpagemiddle>div:nth-child(1){
+    text-align:left;
+}
+#paymentpagemiddle>div:nth-child(2){
+    text-align: left;
+}
+#paymentpagemiddle>div:nth-child(3){
+    text-align: left;
+    margin-top: 1rem;
+}
+#paymentpagemiddle>div:nth-child(4){
+    text-align: left;
+    margin-top: 1rem;
+}
+.upiradio{
+    width: 40%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    
+}
+.upiradio>div:nth-child(1){
+    text-align: left;
+}
+.upiradio>div:nth-child(2){
+    text-align: left;
+}
+.upiradio>div:nth-child(3){
+    text-align: left;
+}
+
+.phonepayjio{
+    display: grid;
+    width: 100%;
+    /* border: 1px solid red; */
+    grid-template-columns: repeat(2,1fr);
+
+}
+/* #phonepayjio>div{
+    border: 1px solid green;
+} */
+
+#payamount{
+    width: 100%;
+    background-color: blue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border-radius: 1rem;
+    font-size: 18px;
+    margin-top: 1rem;
+    
+
+}
+#containerpayment{
+    margin-top: 10rem;
+}
+#payamount:disabled:hover{
+    cursor: not-allowed;
+    background-color: rgb(181, 181, 247);
+}
+
+.input{
+    border: 1px solid black;
+    margin-top: 1rem;
+    font-size: 18px;
+}
+#paymentbottom{
+    width: 50%;
+    height: auto;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+#paymentbottom>img{
+    width: 100%;
+}
+
+#payamount:disabled{
+    background-color: rgb(181, 181, 243);
+}
+#payamount:disabled:hover{
+    cursor: not-allowed;
+}
+
+#offerid{
+    text-align: left;
+}
+
+.offerinside{
+    display: flex;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.offerinside>div>img{
+    width: 40%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+#accordion{
+    width: 100%;
+}
+#dlasfjldfj{
+    width: 40%;
+    margin: auto;
+}

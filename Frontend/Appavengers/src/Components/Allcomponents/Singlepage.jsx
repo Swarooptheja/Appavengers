@@ -30,7 +30,15 @@ export const Singlepage = () => {
         localStorage.setItem("wishlistdata",JSON.stringify(local))
         alert("Product added to the wishlist successful")
     }
-    // console.log(data)
+    let handlebuynow=()=>{
+        let addtocart=JSON.parse(localStorage.getItem("addedtocart")) || []
+        addtocart.push(singledata)
+        localStorage.setItem("addedtocart",JSON.stringify(addtocart))
+        navigate("/placeorder")
+    }
+
+   
+   
     return (
         <div id='singlepagecontainer'>
             <div>
@@ -79,7 +87,7 @@ export const Singlepage = () => {
                 </div>
                 <div id='allbuttons'>
                    <div>
-                    <button className='firstbtn'>Buy Now</button>
+                    <button className='firstbtn' onClick={handlebuynow} >Buy Now</button>
                    </div>
                    <div>
                     <button className='secondbtn' onClick={addtowishlist}>Add to Wishlist</button>
