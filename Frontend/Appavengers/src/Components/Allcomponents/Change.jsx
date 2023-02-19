@@ -48,7 +48,7 @@ function Change({handlestate}) {
       console.log(states)
       address.push(states)
         localStorage.setItem("address",JSON.stringify(address))
-        navigate("/ordersummary")
+        navigate("/payment")
     }
     let handlechange=(e)=>{
       

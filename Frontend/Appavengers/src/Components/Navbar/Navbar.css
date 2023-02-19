@@ -21,7 +21,8 @@
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 4rem;
+    justify-content: space-evenly;
   }
   /* .Navbar_container>div{
     border: 1px solid red;
@@ -33,7 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed; */
+    position: fixed;
     width: 90%;
     right: 20px;
     height: 4rem;
