@@ -37,6 +37,10 @@ const Navbar = () => {
 let handleheart=()=>{
   Navi("/wishlistpage")
 }
+
+let handlecart=()=>{
+  Navi("/addtocard")
+}
   return (
     <>
       <div className="Navbar_container">
@@ -139,11 +143,11 @@ let handleheart=()=>{
         </div>
         <div id="secondnav">
          <div>
-          
+         <FaHeart onClick={handleheart} size={40} color="red"  cursor={"pointer"}/>
          </div>
          <div>
-          {/* <BsFillCartFill size={40} color="black" cursor={"pointer"} /> */}
-          <FaHeart onClick={handleheart} size={40} color="red"  cursor={"pointer"}/>
+          <BsFillCartFill size={40} color="black" cursor={"pointer"} onClick={handlecart} />
+          
          </div>
         </div>
       </div>

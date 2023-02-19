@@ -15,6 +15,13 @@ export const Wishlistpage = () => {
             navigate("/allbooks")
         }
     }
+    let addtocart=JSON.parse(localStorage.getItem("addedtocart")) || []
+    let handleaddtocart=(el)=>{
+        el.items=1
+        addtocart.push(el)
+        localStorage.setItem("addedtocart",JSON.stringify(addtocart))
+        alert('product added to the cart page successfull')
+    }
     useEffect(()=>{
 
     },[update])
@@ -57,7 +64,7 @@ export const Wishlistpage = () => {
                                 </div>
                                 <div id='allbuttons'>
                                     <div>
-                                        <button className='firstbtn'>Buy Now</button>
+                                        <button className='firstbtn' onClick={()=>handleaddtocart(el)}>Add to cart</button>
                                     </div>
                                     <div>
                                         <button className='secondbtn' onClick={()=>addtowishlist(index)}>Remove</button>
