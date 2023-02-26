@@ -12,8 +12,8 @@ Individual project
 </h3>
 
 
-We have made this website with the help of ReactJS.
-Our website is resposible for mobile ,tablet , laptop.
+I have made this website with the help of ReactJS.
+My website is resposible for mobile ,tablet , laptop.
 
 <h2>TECH STACK :</h3>
 <p>
