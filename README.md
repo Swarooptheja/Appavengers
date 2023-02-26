@@ -4,12 +4,12 @@
 <img src="" alt=""/>
 Bookswagon is India's Largest and Cheapest Online Bookstore offering 40+ Million selections.Bookwagon your best source to buy cheap book online, make online book purchase, making us the best book website in India to read book online.
 
-<h2>Member:Theja Swaroop</h2>
+<h2>Contributor:Theja Swaroop</h2>
 
-<p>
+<h3>
 Individual project
  <br>
-</p>
+</h3>
 
 
 We have made this website with the help of ReactJS.
